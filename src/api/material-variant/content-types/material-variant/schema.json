@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "material_variants",
+  "info": {
+    "singularName": "material-variant",
+    "pluralName": "material-variants",
+    "displayName": "MaterialVariant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "variant_description": {
+      "type": "text"
+    },
+    "grain_direction": {
+      "type": "enumeration",
+      "enum": [
+        "L",
+        "A",
+        "NA"
+      ]
+    },
+    "thickness": {
+      "type": "decimal"
+    },
+    "length": {
+      "type": "decimal"
+    },
+    "width": {
+      "type": "decimal"
+    },
+    "availability": {
+      "type": "enumeration",
+      "enum": [
+        "Stock",
+        "Unlimited",
+        "NA"
+      ]
+    },
+    "quantity": {
+      "type": "biginteger"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "addons": {
+      "type": "text"
+    },
+    "id_material": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::material.material",
+      "inversedBy": "material_variants"
+    },
+    "reference": {
+      "type": "string"
+    }
+  }
+}

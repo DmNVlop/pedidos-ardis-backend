@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "materials",
+  "info": {
+    "singularName": "material",
+    "pluralName": "materials",
+    "displayName": "Material",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "observations": {
+      "type": "text"
+    },
+    "unit_of_measure": {
+      "type": "enumeration",
+      "enum": [
+        "m2",
+        "ml",
+        "mm",
+        "cm",
+        "m",
+        "u"
+      ]
+    },
+    "id_location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location.location",
+      "inversedBy": "materials"
+    },
+    "default_edge": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material.material"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Sheet",
+        "Offcut",
+        "Edge",
+        "Hardware",
+        "Product",
+        "Other"
+      ]
+    },
+    "material_variants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::material-variant.material-variant",
+      "mappedBy": "id_material"
+    }
+  }
+}

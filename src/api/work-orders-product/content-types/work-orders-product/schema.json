@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_orders_products",
+  "info": {
+    "singularName": "work-orders-product",
+    "pluralName": "work-orders-products",
+    "displayName": "WorkOrdersProduct",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "observations": {
+      "type": "text"
+    },
+    "addons": {
+      "type": "text"
+    },
+    "id_work_order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::work-order.work-order",
+      "inversedBy": "work_orders_products"
+    },
+    "id_item": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Variante",
+        "Pieza"
+      ]
+    },
+    "quantity": {
+      "type": "biginteger"
+    }
+  }
+}

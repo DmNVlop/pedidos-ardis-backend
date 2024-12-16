@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "edge_variants",
+  "info": {
+    "singularName": "edge-variant",
+    "pluralName": "edge-variants",
+    "displayName": "EdgeVariant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thickness": {
+      "type": "integer"
+    },
+    "min_width": {
+      "type": "decimal"
+    },
+    "max_width": {
+      "type": "decimal"
+    },
+    "reference": {
+      "type": "text"
+    },
+    "id_edge": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::edge.edge",
+      "inversedBy": "edge_variants"
+    },
+    "availability": {
+      "type": "enumeration",
+      "enum": [
+        "Stock",
+        "Unlimited",
+        "NA"
+      ]
+    },
+    "quantity": {
+      "type": "biginteger"
+    },
+    "price": {
+      "type": "decimal"
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "name": "pedidos-ardis-backend",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "Backend de Pedidos a Ardis",
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",
